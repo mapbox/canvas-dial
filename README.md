@@ -3,6 +3,8 @@
 A simple dial or gauge implemented in HTML5 Canvas and designed to be
 performant and flexible.
 
+## [Demo](http://requirebin.com/?gist=4fe63c664c753fedae1d)
+
 ## API
 
 `new Dial(element, options)` create a new dial, owning a single DOM element.
