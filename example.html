@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>gauge</title>
+</head>
+<body>
+<div id='gauge'></div>
+<script src='index.js'></script>
+<script>
+var settings = [
+  {
+    diameter: 20,
+    width: 8,
+    outer: 15,
+    gap: 0,
+    background: '#ccc',
+    foreground: '#c00',
+    min: 0,
+    start: 0,
+    max: 1
+  },
+  {
+    diameter: 20,
+    width: 8,
+    outer: 15,
+    gap: 10,
+    background: '#ccc',
+    foreground: '#000',
+    min: 0,
+    start: 0,
+    max: 1
+  },
+  {
+    diameter: 20,
+    width: 8,
+    outer: 15,
+    gap: 10,
+    background: '#eee',
+    foreground: '#00f',
+    min: 0,
+    start: 0.5,
+    max: 1
+  }
+];
+
+settings.forEach(function(settings) {
+    var gauge = new Dial(document.body.appendChild(document.createElement('div')), settings);
+    gauge.draw(0.5);
+    var range = document.body.appendChild(document.createElement('input'));
+    range.type = 'range';
+    range.min = 0;
+    range.max = 1;
+    range.step = 0.001;
+    range.oninput = function(e) {
+      gauge.draw(parseFloat(e.target.value));
+    };
+});
+</script>
+</body>
+</html>
