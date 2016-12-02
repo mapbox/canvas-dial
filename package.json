@@ -1,5 +1,5 @@
 {
-  "name": "canvas-dial",
+  "name": "@mapbox/canvas-dial",
   "version": "1.0.0",
   "description": "a dial indicator",
   "main": "index.js",
